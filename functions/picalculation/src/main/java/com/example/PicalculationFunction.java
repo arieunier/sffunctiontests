@@ -39,13 +39,17 @@ public class PicalculationFunction implements SalesforceFunction<FunctionInput, 
     LOGGER.info("Function is called");
 
     Double decimalsNumbers = event.getData().getDecimalsNumber();
+    String jobId = event.getData().getJobId();
+
+    LOGGER.info("Value Received : DecimalNumbers {}" , decimalsNumbers);
+    LOGGER.info("Value Received : JobId {}" , jobId);
     
-    LOGGER.info("Value Received {}" , decimalsNumbers);
     Double sum = calcPi(decimalsNumbers);
-    //for(int counter=1;counter<decimalsNumbers;counter++){
-    //  sum += Math.pow(-1,counter + 1)/((2*counter) - 1);
-    //}
+    
     LOGGER.info("Value Calculated {}" , sum);
+    // now inserts the data back to Salesforce
+
+    
     return new FunctionOutput(sum.toString());
     /*
     List<Record> records =
