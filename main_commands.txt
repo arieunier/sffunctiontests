@@ -1,0 +1,12 @@
+- sfdx login:functions
+- sfdx generate:project -n MyFunctionProject
+- sfdx generate:function --name myfunction --language javascript
+
+- sfdx force:org:create -s -f config/project-scratch-def.json -a MyScratchOrgAlias -v functionsbeta2
+- sfdx env:create:compute -o MyScratchOrgAlias -a MyComputeEnv
+- sfdx run:function:start (in the function folder)
+- $ sfdx run:function -l http://localhost:8080 -p '@functions/myfunction/payload.json'
+- sfdx project:deploy:functions -o MyScratchOrgAlias
+- sfdx env:list
+- sfdx env:log:tail -e MyComputeEnv
+- sfdx env:display -e MyComputeEnv
