@@ -36,7 +36,7 @@ public class PicalculationFunction implements SalesforceFunction<FunctionInput, 
       throws Exception {
 
     String returnValue = "1.0";
-    LOGGER.info("Function is called");
+    LOGGER.info("Function is called  ");
 
     Double decimalsNumbers = event.getData().getDecimalsNumber();
     String jobId = event.getData().getJobId();
