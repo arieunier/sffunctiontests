@@ -1,5 +1,13 @@
 {
   "orgName": "arieunier company",
   "edition": "Developer",
-  "features": ["Functions"]
+  "features": ["Functions", "EnableSetPasswordInApi"],
+  "settings": {
+    "lightningExperienceSettings": {
+      "enableS1DesktopEnabled": true
+    },
+    "mobileSettings": {
+      "enableS1EncryptedStoragePref2": false
+    }
+  }
 }
