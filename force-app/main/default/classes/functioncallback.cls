@@ -1,8 +1,8 @@
 public with sharing class functioncallback {
     public static void performCall() {
-        functions.Function myFunction = functions.Function.get('functionstest.picalculation');
+        functions.Function myFunction = functions.Function.get('functionstest.picalculationjs');
         // Pass a callback to Function.invoke to perform an asynchronous invocation.
-        functions.FunctionInvocation invocation = myFunction.invoke('{"decimalsNumber" :  1000000000}', new DemoCallback());
+        functions.FunctionInvocation invocation = myFunction.invoke('{"decimalsNumber" :  100000000, "jobId":"1"} ', new DemoCallback());
     }
 
     public class DemoCallback implements functions.FunctionCallback {
@@ -14,4 +14,3 @@ public with sharing class functioncallback {
     }
 
 }
-

@@ -2,10 +2,17 @@
 - sfdx generate:project -n MyFunctionProject
 - sfdx generate:function --name myfunction --language javascript
 - sfdx force:org:create -s -f config/project-scratch-def.json -a FunctionsScratchOrg -v FunctionsOrg --durationdays 30
-- sfdx env:create:compute -o FunctionsScratchOrg -a FunctionsComputeEnv
+#- sfdx env:create:compute -o FunctionsScratchOrg -a FunctionsComputeEnv
+sf env create compute --connected-org=FunctionsScratchOrg --alias FunctionsComputeEnv
+
 - sfdx run:function:start (in the function folder)
 - $ sfdx run:function -l http://localhost:8080 -p '@functions/picalculation/payload.json'
+- sf run function -l http://localhost:8080 -p '@functions/picalculationjs/payload.json'
 - sfdx deploy:functions -o FunctionsScratchOrg
-- sfdx env:list
-- sfdx env:log:tail -e FunctionsComputeEnv
-- sfdx env:display -e FunctionsComputeEnv
+# sfdx env:list
+sf env list 
+# sfdx env:log:tail -e FunctionsComputeEnv
+sf env log tail --target-compute FunctionsComputeEnv
+#- sfdx env:display -e FunctionsComputeEnvsf
+sf env display  --target-env=FunctionsScratchOrg
+export DEBUG=*
