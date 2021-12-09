@@ -15,4 +15,4 @@ sf env list
 sf env log tail --target-compute FunctionsComputeEnv
 #- sfdx env:display -e FunctionsComputeEnvsf
 sf env display  --target-env=FunctionsScratchOrg
-export DEBUG=*
+export DEBUG=*sf

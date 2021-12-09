@@ -21,7 +21,6 @@ export default async function (event, context, logger) {
            	 	successCount = successCount + 1;
         	}
 	    }
-		return (4* successCount) / iter;
 	}
 
     const data = event.data || {};
