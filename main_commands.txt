@@ -1,4 +1,5 @@
-- sfdx login:functions
+#sfdx login:functions
+sf login functions 
 - sfdx generate:project -n MyFunctionProject
 - sfdx generate:function --name myfunction --language javascript
 - sfdx force:org:create -s -f config/project-scratch-def.json -a FunctionsScratchOrg -v FunctionsOrg --durationdays 30
@@ -16,3 +17,5 @@ sf env log tail --target-compute FunctionsComputeEnv
 #- sfdx env:display -e FunctionsComputeEnvsf
 sf env display  --target-env=FunctionsScratchOrg
 export DEBUG=*sf
+# deletes
+sf env delete --target-compute
