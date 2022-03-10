@@ -1,7 +1,7 @@
 #/bin/sh
 
-ALIASORG=FunctionsScratchOrg
-COMPUTEENV=FunctionsComputeEnv
+export ALIASORG=FunctionsScratchOrg
+export COMPUTEENV=FunctionsComputeEnv
 
 sfdx force:org:create -s -f config/project-scratch-def.json -a  $ALIASORG -v FunctionsOrg --durationdays 30
 read -p "Press [Enter] to move to next part"
